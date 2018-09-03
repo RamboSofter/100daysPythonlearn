@@ -7,3 +7,11 @@ def for lambda try
 class exec in raise
 
 在Python3中，exec不再是关键字，但nonlocal是新的关键字
+
+Python操作顺序：
+PEMDAS优先级规则
+括号（P，Parentheses）拥有最高的优先级
+乘方（E，Exponentiation）操作拥有次高的优先级，3*1**3的结果是3，不是27，因为乘方优先级高
+乘法（M，Multiplication）和除法（D，Division）优先级相同
+加法（A，Addition）和减法（S，Substraction）
+优先级相同的操作按自左向右的顺序求值（除了乘方以外）
