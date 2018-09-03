@@ -1,0 +1,9 @@
+and del   from  not   while
+as elif   global  or   with
+assert   else  if  pass  yield
+break   except   import  print
+continue finally is return
+def for lambda try
+class exec in raise
+
+在Python3中，exec不再是关键字，但nonlocal是新的关键字
