@@ -1,0 +1,9 @@
+x != y #x不等于y
+x > y  #x比y大
+x < y  #x比y小
+x >= y #x大于等于y
+x <= y #x小于等于y
+and    #与  全真才真
+or     #或  全假才假
+not    #非
+获取键盘输入：python2： raw_input()  python3: input()
