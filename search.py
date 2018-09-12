@@ -12,14 +12,13 @@ def count(word,zf):
     for letter in word:
         if letter == zf:
              count=count+1
-    print count
+    print(count)
     
 #重写count函数，使用find函数
 def count_1(word,zf):
     count=0
     index=0
-    for zf in word:
-         if find(word,zf,index)!=-1:
-              count=count+1
-              index=index+1
-    print count
+    while find(word,zf,index)!=-1:
+        count=count+1
+        index=index+1
+    print(count)
