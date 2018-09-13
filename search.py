@@ -20,5 +20,5 @@ def count_1(word,zf):
     index=0
     while find(word,zf,index)!=-1:
         count=count+1
-        index=index+1
+        index=find(word,zf,index)+1
     print(count)
