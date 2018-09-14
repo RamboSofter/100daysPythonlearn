@@ -32,12 +32,16 @@ def print_no_e():
 #编写一个avoids待修改：
 def avoids(word,x):
     count=0
-    for s in x:
-        if word.find(s)==-1:
+    i=0
+    while i<len(x):
+        if word.find(x[i])==-1:
+            i=i+1
+        else:
             count=count+1
+            i=i+1
     if count==0:
         return True    
-    else:
+    elif count!=0:
         return False
 def print_no():
     fin=open('E:\PythonTest\words.txt')
@@ -47,7 +51,7 @@ def print_no():
     str=input('请输入禁止字符串：')
     
     for line in fin:
-        if avoids(line,str)==False:
+        if avoids(line,str)==True:
             word=line.strip()
             print(word)
             count=count+1
@@ -56,3 +60,9 @@ def print_no():
             sum=sum+1
     bf=count/sum
     print(bf)
+    
+
+print_no()
+aueoi:0.0009401
+ayeio:0.0089888
+aeiouty:只输出4个单词
