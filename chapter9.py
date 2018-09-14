@@ -66,3 +66,17 @@ print_no()
 aueoi:0.0009401
 ayeio:0.0089888
 aeiouty:只输出4个单词
+#接收一个单词以及由需要字母组成的字符串，当单词只由这些字母组成时返回true。空格问题
+def uses_only(word,use):
+    count=0
+    i=0
+    while i<len(word):
+        if use.find(word[i])==-1:
+            count=count+1
+            i=i+1
+        else:
+            i=i+1
+    if count==0:
+        return True    
+    elif count!=0:
+        return False
