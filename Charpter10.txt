@@ -2,4 +2,12 @@
 append方法：在列表尾部添加新的元素：t.append('d')
 extend方法：接收一个列表作为参数，并将其所有的元素附加到列表中：t1.extend(t2)
 sort方法：将列表中的元素从低到高重新排序：t.sort()
-对
+对列表元素累加，sum函数，sum(t)
+#编写一个nested_sum,接收一个由内嵌的整数列表组成的列表作为形参，并将内嵌列表中的值全部加起来
+def nested_sum(t):
+    summ=0
+    i=0
+    for i in range(len(t)):
+        summ=summ+sum(t[i])
+    print(summ)
+
