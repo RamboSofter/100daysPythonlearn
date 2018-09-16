@@ -11,3 +11,9 @@ def nested_sum(t):
         summ=summ+sum(t[i])
     print(summ)
 
+#接收一个字符串列表，并返回一个新列表，其元素是大写的字符串
+def capitalize_all(t):
+    res=[]
+    for s in t:
+        res.append(s.capitalize())
+    return res
