@@ -44,3 +44,18 @@ def middle(t):
     t.pop(0)
     t.pop(len(t)-1)
     return t
+#编写一个函数is_sorted,接收一个列表作为形参，并当列表是按照升序排好序的时候返回True，否则返回False。你可以假定（作为前置条件）列表的元素是可以使用关系操作符<,>等比较的
+def is_sorted(t):
+    i=0
+    while i <len(t)-1:
+        if t[i]>t[i+1]:
+            return False
+        i=i+1
+    return True
+ #回文，编写一个函数is_anagram，接收两个字符串，当它们互为回文时返回True
+ def is_anagram(s,t):
+    if s==t[::-1]:
+        return True
+    else:
+        return False
+#编写一个函数has_duplicates接收一个列表，当其中任何一个元素出现多于一次时，返回true。它不应当修改原始列表
