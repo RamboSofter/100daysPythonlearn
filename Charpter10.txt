@@ -59,3 +59,69 @@ def is_sorted(t):
     else:
         return False
 #编写一个函数has_duplicates接收一个列表，当其中任何一个元素出现多于一次时，返回true。它不应当修改原始列表
+def has_duplicates(t):
+    d = {}
+    for x in t:
+        if x in d:
+            return True
+        d[x] = True
+    return False
+#如果班级中有23个学生，那么其中有两人生日相同的几率有多大？可以通过随机生成23个生日的样本并检查是否有相同的匹配来估计这个几率。提示：可以使用random模块中的randint函数来生成随机生日
+import random
+def srxtgl():
+    class1= []
+    i=0
+    while i<23:
+        class1.append(random.randint(1,365))
+        i=i+1
+    print(class1)
+    d={}
+    sum=0
+    for x in class1:
+        if x in d:
+            sum=sum+1
+        d[x]=True
+    print(sum)
+    p=sum/23
+    return p
+#参考答案
+import random
+
+def has_duplicates(t):
+    """Returns True if any element appears more than once in (t),
+    False otherwise."""
+    s = t[:]
+    s.sort()
+    for i in range(len(s)-1):
+        if s[i] == s[i+1]:
+            return True
+    return False
+
+
+def random_bdays(n):
+    """Returns a list of integers between 1 and 365, with length (n)."""
+    t = []
+    for i in range(n):
+        bday = random.randint(1, 365)
+        t.append(bday)
+    return t
+
+
+def count_matches(students, samples):
+    """Generates (samples) samples of (students) students, and counts
+    how many of them have at least one pair of students with the same bday."""
+    count = 0
+    for i in range(samples):
+        t = random_bdays(students)
+        if has_duplicates(t):
+            count += 1
+    return count
+
+"""run the birthday simulation 1000 times and print the number of matches"""
+num_students = 23
+num_simulations = 1000
+count = count_matches(num_students, num_simulations)
+
+print('After %d simulations' % num_simulations)
+print('with %d students' % num_students)
+print('there were %d simulations with at least one match' % count)
