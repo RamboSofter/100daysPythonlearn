@@ -1,0 +1,27 @@
+#编写一个函数，接收任意个数的参数并返回它们的和
+def sumall(*pa):
+    sum=0
+    if len(pa)!=0:
+        for p in pa:
+            sum+=p
+    return sum
+ 
+ 关系操作符比较元组：Python会从每一个序列的第一个元素开始比较。如果相等，则比较下一个元素，直到找到不同的元素。后面的元素就不考虑了。
+ DSU模式：
+ 修饰（Decorate）：构建一个元组列表，在序列元素之前放置一个或多个排序键。
+ 排序（Sort）：给这个序列排序，并
+ 去修饰（Undecorate）:抽取排好序的序列中的元素
+ #假设有一个单词列表，想要按照它们的长度从大到小来排序：
+ def sort_by_length(words):
+    t=[]
+    for word in words:
+        t.append((len(word),word))
+    t.sort(reverse=True)
+    
+    res=[]
+    for length,word in t:
+        res.append(word)
+    return res
+    
+ #当单词长度相等时，单词随机排序
+ 
